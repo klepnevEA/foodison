@@ -1,0 +1,40 @@
+.delivery {
+	&__title {
+		font-size: rem(40px);
+		color: #a1a1a1;
+		padding-bottom: rem(10px);
+		margin-bottom: rem(10px);
+		border-bottom:1px solid  #A1A1A1;
+	}
+
+	&__wrap {
+		@extend %clearfix;
+	}
+
+	&__col {
+		float: left;
+		width: 50%;
+		padding-top: rem(85px);
+		padding-bottom: rem(60px);
+	}
+
+	&__img {
+		width: rem(100px);
+		margin: 0 auto;
+		margin-bottom: rem(30px);
+	}
+
+	&__text {
+		font-size: rem(40px);
+		line-height: 1;
+		margin-bottom: rem(10px);
+	}
+
+	&__comment {
+		font-size: rem(22px);
+		color: rgba(0, 0, 0, 0.502);
+		font-family: "Open Sans";
+	}
+}
+
+

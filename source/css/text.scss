@@ -1,0 +1,39 @@
+.text {
+	font-family: 'IntroHeadR-Base';
+	font-size: rem(35px);
+	line-height: 1;
+	margin-bottom: rem(20px);
+	
+	strong {
+		font-family: 'IntroHeadR-Base';
+		font-size: rem(35px);
+	}
+
+	&-orange {
+		color: $orange;
+		font-weight: bold;
+
+	}
+
+	&_strong {
+		font-size: rem(40px);
+		margin: rem(20px) 0;
+		font-weight: bold;
+	}
+
+	&_orange {
+		color: $orange;
+	}
+
+	&_gray {
+		color: #757575;
+		font-size: rem(50px);
+		margin-bottom:  rem(50px);
+	}
+
+	&_gray-small {
+		color: #757575;
+		font-size: rem(29px);
+		margin-bottom: rem(75px);
+	}
+}

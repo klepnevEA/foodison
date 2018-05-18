@@ -1,0 +1,66 @@
+.btn {
+	display: inline-block;
+	width: 100%;
+	font-size: rem(40px);
+	padding: rem(30px);
+	background-color: $orange;
+	border: 1px solid $orange;
+    border-radius: rem(10px);
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+    
+    img {
+        width: rem(67px);
+        vertical-align: middle;
+        margin-right: rem(30px);
+    }
+
+    &_inline {
+        display: inline-block;
+        width: 300px;
+        text-transform: uppercase;
+        margin: 0 rem(5px);
+        
+        @include phones() {
+            width: 90%;
+            margin-bottom: rem(10px);
+        } 
+    }
+
+    
+    &_white {
+    	background-color: #FFF;
+    	color: #000;
+    }
+
+    &_gray {
+        background-color: #FFF;
+        border-color: #6d6d6d;
+        color: #6d6d6d;
+        transition: 0.3s;
+        
+        &_active {
+            background-color: $orange;
+            border: 1px solid $orange;
+            transform: scale(1.02);
+            color: #fff;
+        }
+    }
+
+    &_green {
+        background-color: $green;
+        border: $green;
+    }
+
+    &_purple {
+        background-color: $purple;
+        border: $purple;
+    }
+    
+    
+    &_mt {
+    	margin-top: auto;
+    }
+}
+

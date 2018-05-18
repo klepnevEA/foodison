@@ -1,0 +1,110 @@
+.popup {
+	position: fixed;
+	top: 0;
+	left: -100%;
+	width: calc(100vw - 10px);
+	height: calc(100vh - 10px);
+	overflow: hidden;
+	background-color: #363636;
+	padding: rem(80px) rem(27px);
+	border-radius: 0 rem(10px) rem(10px) 0px;
+	z-index: 2000;
+	transition: 0.5s;
+
+	&.active {
+		left: 0%;
+	}
+
+	&__close {
+		position: absolute;
+		top: rem(27px);
+		right: rem(27px);
+		width: rem(40px);
+	}
+
+	&__search {
+		width: 100%;
+		border: 0px;
+		padding: rem(15px) rem(15px) rem(15px) rem(80px);
+		font-size: rem(35px);
+		border-radius: rem(10px);
+		background-image: url(../img/magnifier.png);
+		background-repeat: no-repeat;
+		background-size: rem(36px);
+		background-position: rem(20px) center;
+	}
+
+	&__naw {
+		color: #fff;
+		font-size: rem(40px);
+		padding: rem(20px) 0 ;
+		border-bottom: 1px solid #4d4d4d;
+		margin-bottom: rem(30px);
+
+		&-elem {
+			text-align: center;
+
+			&_active {
+				.popup__naw-link {
+					color: $orange;
+				}
+			}
+		}
+
+		&-link {
+			display: inline-block;
+			color: #fff;
+			padding: rem(20px) 0;
+
+			@include phones-320() {
+				padding: rem(5px) 0;
+			}
+		}
+	}
+
+	&__social {
+		margin: rem(100px) 0;
+
+		@include phones-320() {
+			margin: rem(10px) 0;
+		}
+		&-list {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+
+		}
+
+		&-elem {
+			width: rem(47px);
+			margin: 0 rem(39px);
+		}
+	}
+
+	&__menu {
+		&-elem {
+		}
+
+		&-link {
+			display: inline-block;
+			font-family: 'OpenSans';
+			color: #fff;
+			font-size: rem(40px);
+			padding-bottom: rem(40px);
+			
+			@include phones-320() {
+				font-size: rem(35px);
+				padding-bottom: rem(10px);
+			}
+		}
+	}
+
+	&__logo {
+		position: absolute;
+		bottom: rem(30px);
+		left: 50%;
+		transform: translate(-50%, 0);
+		width: rem(290px);
+	}
+}

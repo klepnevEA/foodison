@@ -1,0 +1,41 @@
+.bonus-system {
+	padding: rem(40px) rem(27px);
+	
+	&__elem {
+		padding: rem(40px) 0px;
+	}
+
+	&__title {
+		text-align: center;
+		font-size: rem(40px);
+		line-height: 0.65;
+		font-family: 'IntroHeadR-Base';
+		color: #737373;
+		line-height: 1.2;
+	}
+
+	&__value {
+		text-align: center;
+		font-size: rem(78px);
+		line-height: 0.65;
+		font-family: 'IntroHeadR-Base';
+		color: $orange;
+		line-height: 1.2;
+	}
+
+	&__text {
+		text-align: center;
+		font-size: rem(35px);
+		line-height: 1.143;
+		font-family: 'IntroHeadR-Base';
+		
+		span {
+			font-family: 'IntroHeadR-Base';
+			font-size: rem(48px);
+			font-weight: bold;
+		}
+	}
+}
+
+
+

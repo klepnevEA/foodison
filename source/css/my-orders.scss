@@ -1,0 +1,144 @@
+.my-orders {
+	background-color: #F4F4F4;
+	padding: rem(40px) rem(27px);
+	margin-top: rem(25px);
+	
+	&_mt-0 {
+		margin-top: 0;
+		min-height: calc(100vh - 100px);
+	}
+	
+	&__block {
+		position: relative;
+		background-color: #fff;
+        border-radius: rem(10px);
+        margin-bottom: rem(14px);
+        padding: rem(10px) rem(40px);
+        
+        @include phones-320() {
+			padding: rem(10px) rem(20px);
+		}
+
+        
+        &_active {
+        	.my-orders__table {
+        		display: table;
+        	}
+        }
+
+        &_menu {
+        	.my-orders__block-buttons {
+        		display: flex;
+        	}
+        }
+        
+        &-buttons {
+        	position: absolute;
+        	top: 0;
+        	left: 0;
+        	right: 0;
+        	bottom: 0;
+        	border-radius: rem(10px);
+        	background-color: rgba(222, 76, 27, 0.8);
+        	display: flex;
+   	        flex-direction: column;
+   	        justify-content: center;
+   	        align-items: stretch;
+   	        align-content: stretch;
+   	        display: none;
+   	        
+        }
+
+        &-btn {
+        	flex: 1 1 auto;
+        	display: flex;
+   	        justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: rem(40px);
+            border-bottom: 1px solid #fff;
+            margin:  0 rem(50px);
+            
+            &:last-child {
+            	border-bottom: 0px;
+            }
+        }
+	}
+
+	&__info {
+		display: flex;
+		align-items:center;
+		margin-bottom: rem(10px);
+		
+
+	}
+
+	&__order {
+		font-family: 'IntroHeadR-Base';
+		font-size: rem(40px);
+		color: #737373;
+		line-height: 1;
+		margin-right: rem(30px);
+		min-width: rem(300px);
+		
+		@include phones-320() {
+			min-width: auto;
+			text-align: left;
+			margin-right: 0;
+		}
+	}
+
+	&__price {
+		font-family: 'IntroHeadR-Base';
+		font-size: rem(40px);
+		line-height: 1;
+	}
+
+	&__count {
+		text-align: center;
+		font-family: 'OpenSans-Bold';
+		color: $orange;
+		margin-left: auto;
+		
+
+
+		span {
+			display: block;
+			font-family: 'OpenSans-Bold';
+			font-size: rem(41px);
+			line-height: 1;
+		}
+	}
+
+	&__table {
+		width: 100%;
+		font-family: 'IntroHeadR-Base';
+		font-size: rem(40px);
+		border-spacing: 0px;
+		margin-bottom: rem(20px);
+		display: none;
+		
+		td {
+			
+		}
+		
+		&-name {
+			text-align: left;
+			padding: rem(15px) rem(15px) rem(15px) 0;
+			color: #737373;
+		}
+
+		&-count {
+			padding: rem(15px);
+			border-left: 1px solid $orange;
+			border-right: 1px solid $orange;
+		}
+
+		&-price {
+			color: $orange;
+			text-align: right;
+			padding: rem(15px) 0 rem(15px) rem(15px);
+		}
+	}
+}
+

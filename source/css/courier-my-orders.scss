@@ -1,0 +1,375 @@
+.courier-my-orders {
+	position: relative;
+	background-color: #FFF;
+	border-radius: rem(10px);
+	padding: rem(20px) rem(40px);
+	margin-bottom: rem(15px);
+	overflow: hidden;
+	
+	&__head {
+		display: flex;
+		margin-bottom: rem(15px);
+		
+		@include phones() {
+			flex-direction: column;
+			align-items: center;
+		} 
+	}
+
+	&__drop {
+		overflow: hidden;
+		max-height: 0px;
+		transition: 0.3s;
+		
+		&.active {
+			max-height: 1000px;
+		}
+	}
+
+	&__head-order {
+		font-size: rem(40px);
+		width: calc(50% - 50px);
+		text-align: left;
+		display: flex;
+		align-items: center;
+
+		@include phones() {
+			width: 100%;
+			justify-content: center;
+			text-align: center;
+			margin-bottom: rem(10px);
+		} 
+		
+		span {
+			color: $orange;
+		}
+	}
+
+	&__head-time {
+		display: flex;
+		align-items: center;
+		font-size: rem(40px);
+		width: 100px;
+		text-align: center;
+		
+		@include phones() {
+			width: 100%;
+			justify-content: center;
+			text-align: center;
+			margin-bottom: rem(10px);
+		} 
+	}
+
+	&__head-info {
+		width: calc(50% - 50px);
+		text-align: right;
+		
+		@include phones() {
+			width: 100%;
+			justify-content: center;
+			text-align: center;
+			margin-bottom: rem(10px);
+		} 
+	}
+
+	&__head-buttons {
+		display: flex;
+		
+		@include phones() {
+			width: 100%;
+			justify-content: center;
+		} 
+	}
+
+	&__head-btn {
+		display: flex;
+		align-items: center;
+		border-radius: rem(10px);
+		border: 1px solid #737373;
+		padding: rem(3px) rem(10px);
+		margin-right: rem(3px);
+		color: #000;
+		font-size: rem(20px);
+		
+		img {
+			width: rem(26px);
+			margin-right: rem(9px);
+			font-size: rem(21px);
+		}
+	}
+
+	&__head-btn-add {
+		position: absolute;
+		display: inline-block;
+		width: rem(40px);
+		height: rem(40px);
+		border-radius: 50%;
+		border: 2px solid $green;
+		margin-left: auto;
+		top: rem(20px);
+		right: rem(20px);
+
+		&:after,
+		&:before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%) rotate(0deg);
+			width: 80%;
+			height: 2px;
+			background-color: $green;
+		}
+
+		&:before {
+			transform: translate(-50%, -50%) rotate(90deg);
+		}		
+	}
+
+	&__addess {
+		display: flex;
+		justify-content: flex-start;
+		border-bottom: 1px solid #d2d2d2;
+		padding-bottom: rem(15px);
+		margin-bottom: rem(15px);
+		font-size: rem(40px);
+		color: #737373;
+		
+		li {
+			border-right: 2px solid #d2d2d2;
+			padding: rem(5px) rem(20px);
+			
+			&:first-child {
+				padding-left: 0px;
+			}
+
+			&:last-child {
+				border-right: 0px;
+			}
+		}
+
+		@include phones() {
+			font-size: rem(25px);
+		} 
+	}
+
+	&__comments {
+		color: #737373;
+		display: flex;
+		font-size: rem(31px);
+		-webkit-align-items: flex-start;
+		align-items: flex-start;
+	}
+
+	&__comments-title {
+		flex: 0 0 auto;
+		margin-right: rem(5px);
+		text-align: left;
+	}
+
+	&__comments-text {
+		font-weight: bold;
+		flex: 1 1 auto;
+		text-align: left;
+	}
+
+	&__calculation {
+		display: flex;
+		justify-content: space-between;
+		padding: rem(20px) 0;
+		margin-top: rem(20px);
+		font-size: rem(31px);
+		border-top: 1px solid #bbbbbb;
+		border-bottom: 1px solid #bbbbbb;
+	}
+
+	&__calculation-text {
+		font-weight: bold;
+		color: #737373;
+	}
+
+	&__calculation-amount {
+		color: #737373;
+		span {
+			font-weight: bold;
+			padding-left: rem(20px);
+		}
+	}
+
+	&__menu {
+		padding: rem(20px) 0;
+		border-bottom: 1px solid #bbbbbb;
+		margin-bottom: rem(20px);
+	}
+
+	&__menu-table {
+		width: 100%;
+		font-size: rem(40px);
+		border-collapse: collapse;
+		
+		@include phones() {
+			font-size: rem(30px);
+		} 
+	}
+
+	td {
+		padding: rem(5px);
+	}
+
+	&__menu-dishes {
+		text-align: left;
+		color: #737373;
+	}
+
+	&__menu-count {
+		min-width: rem(95px);
+		text-align: center;
+		border-right: 1px solid #bbbbbb;
+		border-left: 1px solid #bbbbbb;
+	}
+
+	&__menu-amount {
+		white-space: nowrap;
+		color: #737373;
+		text-align: right;
+	}
+
+	&__sum {
+		text-align: right;
+		font-size: rem(40px);
+		color: #737373;
+		margin-bottom: rem(20px);
+		
+		span {
+			color: $orange;
+			font-family: 'OpenSans-Bold';
+		}
+	}
+
+	&__popup {
+		position: absolute;
+		z-index: 1100;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(36, 36, 36, 0.8);
+		padding:  rem(45px);
+		overflow: hidden;
+		transition: 0.3s;
+		
+		&.active {
+			left:0;
+		}
+	}
+
+	&__popup-close {
+		position: absolute;
+		display: inline-block;
+		width: rem(77px);
+		height: rem(77px);
+		border-radius: 50%;
+		border: 2px solid #979797;
+		top: rem(30px);
+		right: rem(30px);
+
+		&:after,
+		&:before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%) rotate(45deg);
+			width: 80%;
+			height: 2px;
+			background-color: #979797;
+		}
+
+		&:before {
+			transform: translate(-50%, -50%) rotate(-45deg);
+		}
+
+	}
+
+	&__popup-list {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: stretch;
+		align-content: stretch;
+		height: 100%;
+	}
+
+	&__popup-link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #fff;
+		font-size: rem(40px);
+		flex: 1 1 auto; 
+	}
+
+	&__popup-elem {
+		display: flex;
+		align-items: stretch;
+		justify-content: space-between;
+		border-bottom: 1px solid #fff;
+		flex: 1 1 auto; 
+		
+		&:last-child {
+			border-bottom: 0px;
+		}
+	}
+	
+	&__popup-wrap {
+		height: 100%;
+		display: flex;
+        flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__popup-title {
+		color: #fff;
+		font-size: rem(66px);
+		margin-bottom: rem(30px);
+	}
+
+	&__popup-text {
+		color: #fff;
+		font-size: rem(40px);
+		margin-bottom: rem(20px);
+	}
+
+	&__smail-happy,
+	&__smail-sad {
+		color: $green;
+		text-transform: uppercase;
+		font-size: rem(40px);
+		text-align: right;
+		width: 100%;
+		
+		img {
+			position: relative;
+			top: 5px;
+			width: rem(48px);
+			margin-left: rem(10px);
+		}
+
+		@include phones() {
+			text-align: center;
+		} 
+	}
+
+	&__smail-sad {
+		color: $purple;
+	}
+
+}
+
+
+
+
+
+
+

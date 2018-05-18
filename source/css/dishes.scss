@@ -1,0 +1,268 @@
+.dishes {
+	margin: 0 auto;
+	width: calc(100% - rem(140px));
+	max-width: rem(612px);
+	padding: 0 rem(20px);
+	
+	&_mb {
+		margin-bottom: rem(15px);
+	}
+	
+	&__elem {
+		position: relative;
+		display: flex;
+		border-bottom: 1px solid #bbbbbb;
+		min-height: rem(243px);
+		padding: rem(44px) 0;
+		
+		&:last-child {
+			border-bottom: 0px;
+		}
+
+		&:first-child {
+			padding-top: 0px;
+		}
+
+		@include phones-320() {
+			flex-direction: column;
+		}
+	}
+
+	&__pic {
+		position: relative;
+		display: flex;
+		width: rem(178px);
+		flex: 1 0 rem(178px);
+		
+		@include phones-320() {
+			width: 80%;
+			margin: 0 auto;
+			flex: 1 1 rem(200px);
+			height: rem(200px);
+			margin-bottom: rem(20px);
+			justify-content: center;
+		}
+		
+		img {
+			align-self: center;
+			width: 100%;
+			
+			@include phones-320() {
+				width: auto;
+				height: 100%;
+			}
+		}
+	}
+
+	&__info {
+		position: relative;
+		width: calc(100% - rem(178px));
+		text-align: left;
+		padding-left: rem(26px);
+		flex: 1 0 calc(100% - rem(178px));
+		
+		@include phones-320() {
+			padding-left: 0px;
+		}
+
+		
+		&_count {
+			display: flex;
+			max-width: rem(612px);
+			margin: 0 auto;
+			
+			& .dishes__count {
+				margin-left: auto;
+				
+			}
+		}
+	}
+
+	&__title {
+		font-family: 'IntroHeadR-Base';
+		font-size: rem(40px);
+		margin-bottom: rem(20px);
+		width: 90%;
+		line-height: 1;
+		
+		
+		&_gray {
+			color: #737373;
+			margin-bottom: rem(10px);
+		}
+		
+	}
+
+	&__count {
+		display: flex;
+		width: 128px;
+		font-size: 30px;
+		
+		@include phones-320() {
+			align-items: center;
+		}
+		
+		&-btn {
+			position: relative;
+			width: rem(30px);
+			height: rem(30px);
+			text-align: center;
+			color: $orange;
+			font-size: rem(50px);
+			margin: 0 rem(10px);
+			cursor: pointer;
+			
+			img {
+				position: absolute;
+				width: 100%;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+
+		&-num {
+			width: 50px;
+			text-align: center;
+		}
+	}
+
+	&__text {
+		font-size: rem(28px);
+		font-family: 'OpenSans-Light';
+		line-height: 1.297;
+		color: #393939;
+		font-size: rem(17px);
+		margin-bottom: rem(30px);
+		width: 90%;
+	}
+
+	&__description {
+		position: relative;
+		display: flex;
+		align-items: stretch;
+	}
+
+	&__price {
+		align-self: center;
+		font-family: 'IntroHeadR-Base';
+		font-size: rem(50px);
+		color: $orange;
+		margin-left: auto;
+	}
+
+	&__buttons {
+		display: flex;
+
+		&-col {
+			display: flex;
+			flex-direction: column;
+			transition: 0.3s;
+			&_active {
+				.dishes__btn {
+					background-color: $orange;
+					color: #fff;
+				}
+			}
+		}
+	}
+
+	&__btn {
+		display: inline-block;
+		text-align: center;
+		width: rem(100px);
+		height: rem(50px);
+		line-height: rem(50px);
+		border-radius: rem(10px);
+		color: $orange;
+		font-family: 'IntroHeadR-Base';
+		font-size: rem(30px);
+		margin-right: rem(10px);
+		margin-bottom: rem(10px);
+		transition: 0.3s;
+		
+		@include phones-320() {
+			width: rem(80px);
+		}
+	}
+
+	&__mark {
+		position: absolute;
+		top: 0;
+		left: 0;
+		text-transform: uppercase;
+		color: $orange;
+		font-family: 'OpenSans-Bold';
+		font-size: rem(21px);
+		
+		@include phones-320() {
+			left: rem(40px);
+		}
+	}
+
+	&__add {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: auto;
+		width: rem(45px);
+		height: rem(45px);
+		
+		@include phones-320() {
+			top: 0px;
+			width: rem(35px);
+			height: rem(35px);
+			right: 5px;
+		}
+		
+		&:after,
+		&:before {
+			content: '';
+			display: inline-block;
+			width: 100%;
+			height: 4px;
+			border-radius: 5px;
+			background-color: $orange;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+
+			@include phones-320() {
+				height: 3px;
+			}
+		}
+
+		&:before {
+			transform: translate(-50%, -50%) rotate(90deg);
+		}
+
+		&:after {
+			transform: translate(-50%, -50%) rotate(0deg);
+		}
+	}
+
+	&__total {
+		background-color: #F7F7F7;
+		padding: rem(20px);
+		text-align: right;
+		
+		&-title {
+			font-size: rem(40px);
+			color: $orange;
+			margin-bottom: rem(10px);
+
+		}
+		&-sum {
+			color: #000;
+		}
+
+		&-comment {
+			font-size: rem(35px);
+			color: #737373;
+		}
+	}
+}
+
+
+
+

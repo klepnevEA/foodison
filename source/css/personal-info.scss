@@ -1,0 +1,184 @@
+.personal-info {
+	display: flex;
+	position: relative;
+	align-items: center;
+	margin-bottom: rem(55px);
+
+	&__name {
+		text-align: left;
+		font-size: rem(60px);
+		margin-bottom: rem(40px);
+	}
+
+	&__phone, &__adres {
+		text-align: left;
+		font-size: rem(40px);
+		color: #737373;
+		
+		a {
+			display: block;
+			margin-top: rem(10px);
+			color: $orange;
+			border-bottom: 1px solid $orange;
+		}
+
+		span {
+			display: block;
+			margin-top: rem(10px);
+			color: $orange;
+		}
+	}
+
+	&__count {
+		text-align: center;
+		font-family: 'OpenSans';
+		color: $orange;
+		margin-left: auto;
+		font-size: rem(30px);
+		margin-right: rem(30px);
+		span {
+			display: block;
+			font-family: 'OpenSans-Bold';
+			font-size: rem(60px);
+			line-height: 1;
+		}
+	}
+
+	&__block {
+		width: 100%;
+		padding: rem(20px) rem(40px);
+		border-radius: rem(10px);
+		display: flex;
+		align-items: center;
+		border: 1px solid rgb(144, 144, 144);
+		margin-bottom: rem(20px);
+
+		@include phones() {
+			padding: rem(20px);
+		}
+
+		div {
+			flex: 1 1 auto;
+		}
+
+		&_mt {
+			margin-top: rem(100px);
+		}
+
+		&-text {
+			text-align: left;
+			font-size: rem(40px);
+			color: #737373;
+
+			@include phones() {
+				font-size: rem(27px);
+			}
+		}
+
+		&-value {
+			position: relative;
+			text-align: right;
+			font-size: rem(40px);
+			font-weight: bold;
+			border: 0px;
+			width: 100%;
+			
+
+
+			.jq-selectbox__dropdown {
+				width: 100% !important;
+			}
+
+			ul {
+				position: absolute !important; 
+				padding: rem(20px);
+				text-align: center;
+				background-color: #fff;
+				width: calc(100vw - 58px);
+				max-width: 500px;
+				right: 0;
+				-webkit-border-radius: 10px;
+				border-radius: rem(10px);
+			}
+
+			li {
+				width: 100%;
+				white-space: nowrap;
+				border-bottom: 1px solid $orange;
+				padding: rem(20px);
+
+			}
+
+			@include phones() {
+				font-size: rem(27px);
+			}
+
+			&_orange {
+				color: $orange;
+				padding-right: 30px;
+
+
+
+				@include phones() {
+					background-size: auto 20px;
+				}
+			}
+		}
+	}
+}
+
+.select_main {
+	width: 50%;
+	position: relative;
+	
+	
+	&:after {
+		content: '';
+		position: absolute;
+		width: rem(30px);
+		height: rem(30px);
+		top: 50%;
+		right: 0px;
+		transform: translate(0, -50%);
+		background-image: url(../img/arrow-orang.png);
+		background-repeat:  no-repeat;
+		background-size: auto 100%;
+		background-position: center;
+		transition: 0.3s;
+	}
+
+	&.active {
+		&:after {
+			transform: rotate(-90deg);
+			top: -11%;
+		}
+	}
+
+	select {
+		-webkit-appearance: none;
+	}
+	
+	.jq-selectbox {
+		&:after {
+			content: '';
+			position: absolute;
+			width: rem(30px);
+			height: rem(30px);
+			top: 50%;
+			right: 0px;
+			transform: translate(0, -50%);
+			background-image: url(../img/arrow-orang.png);
+			background-repeat:  no-repeat;
+			background-size: auto 100%;
+			background-position: center;
+			transition: 0.3s;
+		}
+
+		&.opened {
+			&:after {
+				transform: rotate(-90deg);
+				top: -11%;
+			}
+		}		
+	}
+}

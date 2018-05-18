@@ -1,0 +1,205 @@
+.input {
+	&-block {
+		position: relative;
+		margin-bottom: rem(20px);
+		position: relative;
+		border: 1px solid rgb(144, 144, 144);
+		border-radius: rem(10px);
+		height: rem(95px);
+		
+		&_mt {
+			margin-top: rem(50px);
+		}
+
+		&_transpatent {
+			border-color: transparent;
+			max-width: rem(612px);
+			margin: 0 auto;
+			
+			@include phones_320() {
+				.input-block__text {
+					display: inline-block;
+				}
+
+				input {
+					padding: rem(20px) rem(40px) rem(20px) 50% !important;
+				}
+			}
+		}
+		
+		&__text {
+			position: absolute;
+			top: 50%;
+			left: rem(40px);
+			transform: translate(0 , -50%);
+			font-size: rem(40px);
+
+			@include phones() {
+				left: rem(20px);
+			}
+
+			@include phones_320() {
+				display: none;
+			}
+
+		}
+
+		input {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			width: 100%;
+			padding: rem(20px) rem(40px) rem(20px) 50%;
+			background-color: transparent;
+			border: 0px;
+			font-size: rem(40px);
+			&::-webkit-input-placeholder { /* WebKit browsers */
+				color:    #c9c9c9;
+			}
+			&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+				color:    #c9c9c9;
+			}
+			&::-moz-placeholder { /* Mozilla Firefox 19+ */
+				color:    #c9c9c9;
+			}
+			&:-ms-input-placeholder { /* Internet Explorer 10+ */
+				color:    #c9c9c9;
+			}
+			
+			@include phones() {
+				padding: rem(20px) rem(25px) rem(20px) 50%;
+			}
+
+			@include phones_320() {
+				padding: rem(20px) rem(25px);
+			}
+		}
+
+		.input-checkbox {
+			position: absolute;
+			top: 50%;
+			left: 60%;
+	        transform: translate(0, -50%);
+	        
+	        @include phones-320() {
+				left: auto;
+				right: 0px;
+				padding: 0;
+			}
+		}
+	}
+
+	&-table {
+		width: 100%;
+		padding: rem(20px) rem(35px);
+		margin-bottom: rem(30px);
+		max-width: rem(612px);
+		margin: 0 auto;
+		
+		td {
+			text-align: left;
+			font-size: rem(40px);
+			
+			input {
+				display: inline-block;
+				width: 100%;
+				font-size: rem(26px);
+				display: block;
+				border: 0px;
+				margin: rem(20px) 0;
+				
+				
+				&.border {
+					padding-left: 5px;
+					border-left: 1px solid #000;
+				}
+				
+				
+				&::-webkit-input-placeholder { /* WebKit browsers */
+					color:    #c9c9c9;
+				}
+				&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+					color:    #c9c9c9;
+				}
+				&::-moz-placeholder { /* Mozilla Firefox 19+ */
+					color:    #c9c9c9;
+				}
+				&:-ms-input-placeholder { /* Internet Explorer 10+ */
+					color:    #c9c9c9;
+				}
+			}
+		}
+	}
+
+	&-checkbox {
+		display: block;
+		text-align: left;
+		padding: rem(20px) rem(40px);
+		
+		input {
+			position: absolute;
+			visibility: hidden;
+		}
+
+		input:checked + .input-checkbox__btn{
+			&:after {
+				opacity: 1;
+			}
+		}
+
+		&__btn {
+			position: relative;
+			display: inline-block;
+			width: 36px;
+			height: 36px;
+			border: 1px solid $orange;
+			cursor: pointer;
+			margin-right: rem(10px);
+			
+			&:after {
+				content: "\2714";
+				font-size: 30px;
+				color: $orange;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+		        transform: translate(-50%, -50%);
+		        opacity: 0;
+			}
+		}
+
+		&__text {
+			font-size: rem(40px);
+			position: relative;
+			line-height: 1;
+			top: -3px;
+			
+			@include phones() {
+				top: -9px;
+			}
+		}
+	}
+
+	&-forgot-password {
+		display: block;
+		color: #c9c9c9;
+		font-size: rem(26px);
+		padding: rem(30px);
+	}
+
+	&-registration {
+		display: inline-block;
+		color: $orange;
+		font-size: rem(42px);
+		margin-top: rem(100px);
+		border-bottom: 1px solid $orange;
+		
+		@include phones-320() {
+			margin-top: rem(20px);
+			margin-bottom: rem(30px);
+		}
+	}
+}
+
