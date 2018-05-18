@@ -18,11 +18,12 @@
 
     &_inline {
         display: inline-block;
-        width: 300px;
+        width: calc(50% - 10px);
         text-transform: uppercase;
         margin: 0 rem(5px);
+        margin-bottom: rem(5px);
         
-        @include phones() {
+        @media (max-width: 375px) {
             width: 90%;
             margin-bottom: rem(10px);
         } 

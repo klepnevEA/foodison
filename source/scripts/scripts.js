@@ -74,7 +74,7 @@ $(document).ready(function() {
     /*открытие блока в курьерах*/
 
 
-    $('.courier-my-orders__addess, .courier-my-orders__head, .courier-my-orders__comments').on('touckend mouseup', function (e) {
+    $('.courier-my-orders-open').on('touckend mouseup', function (e) {
         e.preventDefault();
         var thisTarget = e.target,
             thisParent = thisTarget.closest('.courier-my-orders'),
@@ -84,24 +84,29 @@ $(document).ready(function() {
 
     $('.btn-canceled').on('touckend mouseup', function (e) {
         e.preventDefault();
-        var thisTarget = e.target,
-            thisParent = thisTarget.closest('.courier-my-orders'),
-            thisDrop = $(thisParent).find('.courier-my-orders__popup_canceled');
-            thisDrop.toggleClass('active');
+        $('.courier-my-orders__popup_canceled').toggleClass('active');
     });
 
     $('.btn-fulfilled').on('touckend mouseup', function (e) {
         e.preventDefault();
-        var thisTarget = e.target,
-            thisParent = thisTarget.closest('.courier-my-orders'),
-            thisDrop = $(thisParent).find('.courier-my-orders__popup_fulfilled');
-            thisDrop.toggleClass('active');
+        $('.courier-my-orders__popup_fulfilled').toggleClass('active');
+    });
+
+    $('.courier-my-orders__head-btn-add').on('touckend mouseup', function (e) {
+        e.preventDefault();
+        $('.courier-my-orders__popup_add').toggleClass('active');
     });
 
     $('.courier-my-orders__popup-close, .courier-my-orders__popup-yes').on('touckend mouseup', function (e) {
         e.preventDefault();
         $(this).closest('.courier-my-orders__popup').removeClass('active')
-    })
+    });
+
+
+
+
+
+
 
 
 
