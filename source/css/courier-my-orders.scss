@@ -7,12 +7,11 @@
 	overflow: hidden;
 	
 	&__head {
-		display: flex;
+		//display: flex;
 		margin-bottom: rem(15px);
-		
+		@extend %clearfix;
 		@media screen and (max-width: 375px) {
-			flex-direction: column;
-			align-items: center;
+			
 		} 
 	}
 
@@ -33,13 +32,14 @@
 		white-space: nowrap;
 		display: flex;
 		align-items: center;
+		float: left;
 		
 
 		@media screen and (max-width: 375px) {
-			width: 100%;
-			justify-content: center;
+ 			justify-content: center;
 			text-align: center;
 			margin-bottom: rem(10px);
+			width: auto;
 		} 
 		
 		span {
@@ -51,24 +51,25 @@
 		display: flex;
 		align-items: center;
 		font-size: rem(40px);
-		width: 44px;
+		width: auto;
 		text-align: left;
 		font-weight: bold;
+		float: left;
 
 		@media screen and (max-width: 375px) {
-			width: 100%;
+			
 			justify-content: center;
 			text-align: center;
 			margin-bottom: rem(10px);
+			margin-right: rem(10px);
 		}
 	}
 
 	&__head-info {
 		min-width: 50px;
-		//width: calc(50% - 50px);
 		text-align: right;
 		margin-left: auto;
-		
+		@extend %clearfix;
 
 		@media screen and (max-width: 375px) {
 			width: 100%;
@@ -80,10 +81,11 @@
 
 	&__head-buttons {
 		display: flex;
+		float: right;
 
 		@media screen and (max-width: 375px) {
-			width: 100%;
-			justify-content: center;
+			
+			
 		}
 	}
 
@@ -355,10 +357,11 @@
 	&__smail-sad {
 		color: $green;
 		text-transform: uppercase;
-		font-size: rem(40px);
+		font-size: rem(35px);
 		text-align: right;
 		width: 100%;
 		white-space: nowrap;
+		vertical-align: bottom;
 		
 		
 		img {
